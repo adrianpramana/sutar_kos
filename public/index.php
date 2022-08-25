@@ -8,22 +8,19 @@ if (!isset($_SESSION["login"])) {
 
 require 'function.php';
 
+// Pagination 
+$jumlahDataPerhalaman = 2;
+$jumlahData = count(query("SELECT * FROM pelanggan"));
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman);
+$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+$awalData = ($jumlahDataPerhalaman * $halamanAktif) - $jumlahDataPerhalaman;
+
+$pelanggan = query("SELECT * FROM pelanggan LIMIT $awalData, $jumlahDataPerhalaman");
+
 // Ketika tombol cari ditekan
 if (isset($_POST["cari"])) {
-  $keyword = $_POST["keyword"];
-  $_SESSION["keyword"] = $keyword;
-} else {
-  $keyword = $_SESSION["keyword"];
+  $pelanggan = cari($_POST["keyword"]);
 }
-
-$pelanggan = query("SELECT * FROM pelanggan 
-WHERE
-nama LIKE '%$keyword%' OR
-email LIKE '%$keyword%' OR
-jenis_kelamin LIKE '%$keyword%' OR
-ktp LIKE '%$keyword%' OR
-no_hp LIKE '%$keyword%'
-");
 ?>
 
 
@@ -67,6 +64,9 @@ no_hp LIKE '%$keyword%'
               <li class="group">
                 <a href="#home" class="mx-8 flex py-2 text-base text-slate-800 group-hover:text-sky-500">Contact</a>
               </li>
+              <li class="group">
+                <a href="logout.php" class="mx-8 flex py-2 text-base text-slate-800 group-hover:text-sky-500">Logout</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -95,18 +95,32 @@ no_hp LIKE '%$keyword%'
     </div>
   </section>
 
-  <div class="shrink-0">
-    <input type="text" class="block w-full text-sm text-slate-500
-      text:mr-4 text:py-2 text:px-4
-      text:rounded-full text:border-0
-      text:text-sm text:font-semibold
-      text:bg-violet-50 text:text-violet-700
-      hover:text:bg-violet-100" name="keyword" autofocus placeholder="Masukan keyword pencarian.." autocomplete="off" aria-label="Masukan keyword pencarian.." aria-describedby="button">
-    <button class="rounded-full" type="submit" name="cari" id="button">
-      Cari
-    </button>
-  </div>
+  <div class="container m-auto">
+    <h1>Daftar Pelanggan</h1>
+    <a href="tambah.php">Tambah Data Pelanggan</a>
+    <form action="" method="POST">
+      <input type="text" name="keyword" size="40" autofocus placeholder="masukan keyword pencarian..." autocomplete="off">
+      <button type="submit" name="cari">
+        Cari!
+      </button>
+    </form>
 
+    <?php if ($halamanAktif > 1) : ?>
+      <a href="?halaman=<?= $halamanAktif - 1; ?>">&laquo;</a>
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+      <?php if ($i == $halamanAktif) :  ?>
+        <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color:red;"><?= $i; ?></a>
+      <?php else : ?>
+        <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+      <?php endif; ?>
+    <?php endfor; ?>
+
+    <?php if ($halamanAktif < $jumlahHalaman) : ?>
+      <a href="?halaman=<?= $halamanAktif + 1; ?>">&raquo;</a>
+    <?php endif; ?>
+  </div>
 
   <div class="container mt-4">
     <table class="table-fixed">
@@ -123,13 +137,12 @@ no_hp LIKE '%$keyword%'
 
       <tr>
         <?php $i = 1; ?>
-        <?php foreach ($pelanggan as $row) :
-        ?>
+        <?php foreach ($pelanggan as $row) : ?>
       <tr>
         <td><?= $i; ?></td>
         <td>
-          <a href="">Ubah</a>
-          <a href="">Hapus</a>
+          <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
+          <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin untuk dihapus?');">Hapus</a>
         </td>
         <td> <img src="img/<?= $row["gambar"]; ?>" width="50">
         </td>
@@ -138,9 +151,9 @@ no_hp LIKE '%$keyword%'
         <td><?= $row["jenis_kelamin"]; ?></td>
         <td><?= $row["ktp"]; ?></td>
         <td><?= $row["no_hp"]; ?></td>
+
       </tr>
-      </tr>
-      <?php $i++; ?>
+      <?= $i++ ?>
     <?php endforeach; ?>
     </table>
   </div>

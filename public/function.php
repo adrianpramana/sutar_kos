@@ -60,6 +60,7 @@ function upload()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>
         alert('Yang Anda upload bukan gambar!')
+        </script>
         ";
         return false;
     }
@@ -67,7 +68,7 @@ function upload()
     // Pengecekan jika ukuran gambar terlalu besar
     if ($ukuranFile > 1000000) {
         echo "<script>
-        alert('Ukuran gambar terlalu besar!')
+        alert('Ukuran gambar terlalu besar!');
         </script>
         ";
         return false;
@@ -93,8 +94,6 @@ function hapus($id)
 function ubah($data)
 {
     global $conn;
-    // $query = "INSERT INTO pelanggan VALUES
-
 
     $id = $data["id"];
     $nama = htmlspecialchars($data["nama"]);
@@ -119,7 +118,7 @@ function ubah($data)
     jenis_kelamin = '$jenis_kelamin',
     ktp = '$ktp',
     no_hp = '$no_hp',
-    gambar = '$gambar',
+    gambar = '$gambar'
 
     WHERE id = $id
     ";
@@ -151,7 +150,6 @@ function registrasi($data)
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
 
     // Mengecek username if exist
-
     $result = mysqli_query($conn, "SELECT username FROM user WHERE username =
     '$username'");
     if (mysqli_fetch_assoc($result)) {
