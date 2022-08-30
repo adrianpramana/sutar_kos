@@ -5,9 +5,10 @@ if (isset($_POST["register"])) {
     if (registrasi($_POST) > 0) {
         echo "<script>
         alert('User baru berhasil ditambahkan!');
+        window.location.replace('login.php');
         </script>";
     } else {
-        echo mysqli_error($conn);
+        mysqli_error($conn);
     }
 }
 
@@ -43,7 +44,7 @@ if (isset($_POST["register"])) {
         </div>
 
         <div class="flex justify-center mr-[365px]">
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="submit" name="register">Register!</button>
+            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="submit" name="register">Register</button>
         </div>
     </form>
 </body>
