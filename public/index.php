@@ -124,6 +124,7 @@ if (isset($_POST["cari"])) {
       </div>
     </div>
   </section>
+  <!-- About Section End -->
 </body>
 
 </html>
