@@ -46,16 +46,22 @@ if (isset($_POST["cari"])) {
     <div class="container">
       <div class="flex flex-wrap">
         <div class="w-full self-center px-4 lg:w-1/2">
-          <h1 class="text-base font-semibold text-teal-500 md:text-xl">
+          <h1 class="text-base font-semibold text-primary md:text-xl">
             Hello
           </h1>
-          <h2 class="mb-5 text-lg font-medium text-slate-400 lg:text-2xl"> Lorem ipsum dolor sit amet.
+          <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl"> Lorem ipsum dolor sit amet.
           </h2>
-          <p class="mb-10 font-medium leading-relaxed text-slate-400">
+          <p class="mb-10 font-medium leading-relaxed text-secondary">
             We offer the best facilities.
           </p>
 
-          <a href="#contact" class="rounded-full bg-teal-500 py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">Contact Me</a>
+          <a href="#contact" class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">Contact Me</a>
+        </div>
+        <div class="w-full self-end px-4 lg:w-1/2">
+          <div class="relative mt-10 lg:right-0 lg:mt-9">
+            <img src="img/house.jpg" alt="My House" class="relative z-10 mx-auto max-w-full rounded-full">
+          </div>
+
         </div>
       </div>
     </div>
@@ -125,6 +131,51 @@ if (isset($_POST["cari"])) {
     </div>
   </section>
   <!-- About Section End -->
+
+  <!-- Facility Section Start -->
+
+  <section id="facility" class="bg-slate-100 pt-36 pb-6">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-semibold">Facility</h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl">Our Service</h2>
+          <p class="text-md font-medium text-secondary md:text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam saepe modi blanditiis neque dolorum enim ipsa debitis dolore at nobis, natus libero alias! Vitae, maxime.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="shadow-md overflow-hidden rounded-md">
+            <img src="img/facility/room_1.jpg" alt="Room 1" width="w-full">
+          </div>
+          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark">
+            Living Room
+          </h3>
+          <p class="text-base font-medium text-secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet sit eaque eum sapiente, nobis eius.
+          </p>
+        </div>
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="shadow-md rounded-md overflow-hidden">
+            <img src="img/facility/room_1.jpg" alt="Room 2" width="w-full">
+          </div>
+          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark">
+            Bedrooom
+          </h3>
+          <p class="text-base font-medium text-secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum minus eum laboriosam harum architecto esse?
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Facility Section End -->
 </body>
 
 </html>

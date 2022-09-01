@@ -8,14 +8,16 @@ hamburger.addEventListener('click', function () {
 });
 
 // Navbar fixed
-const header = document.querySelector('header');
-const fixedNav = header.offsetTop;
+window.onscroll = function () {
+  const header = document.querySelector('header');
+  const fixedNav = header.offsetTop;
 
-if (window.pageYOffset > fixedNav) {
-  header.classList.add('navbar-fixed');
-} else {
-  header.classList.remove('navbar-fixed');
-}
+  if (window.pageYOffset > fixedNav) {
+    header.classList.add('navbar-fixed');
+  } else {
+    header.classList.remove('navbar-fixed');
+  }
+};
 
 // Click Anywhere to close Hamburger Menu
 window.addEventListener('click', function (e) {
