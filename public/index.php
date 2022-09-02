@@ -174,8 +174,73 @@ if (isset($_POST["cari"])) {
 
   </section>
 
-
   <!-- Facility Section End -->
+
+  <!-- Location Section Start -->
+  <section id="location" class="bg-slate-800 pt-36 pb-32">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 text-center">
+          <h4 class="mb-2 text-lg font-semibold text-teal-400">
+            Location
+          </h4>
+          <h2 class="mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">Sutar Kos Est. 2020</h2>
+          <p class="text-md font-medium text-secondary md:text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ut quam tenetur, praesentium quod officia?
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full">
+        <div class="flex items-center justify-center">
+          <iframe class="rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d586.2911420803532!2d115.24120723021345!3d-8.683851421837419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd240541955ad53%3A0x364fc375f326c547!2sJl.%20Tukad%20Oos%20No.5%2C%20Renon%2C%20Denpasar%20Selatan%2C%20Kota%20Denpasar%2C%20Bali%2080226!5e0!3m2!1sid!2sid!4v1662100585285!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Location Section End -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="pt-36 pb-32">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">
+            Contact
+          </h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl"> Contact Us
+          </h2>
+          <p class="text-md font-medium text-secondary md:text-lg">
+            Please contact us by filling out the form below, thank you.
+          </p>
+        </div>
+      </div>
+      <form>
+        <div class="w-full lg:mx-auto lg:w-2/3">
+          <div class="mb-8 w-full px-4">
+            <label for="name" class="text-base font-bold">Name</label>
+            <input type="text" name="name" id="name" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+          </div>
+          <div class="mb-8 w-full px-4">
+            <label for="email" class="text-base font-bold">Email</label>
+            <input type="text" email="email" id="email" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+          </div>
+          <div class="mb-8 w-full px-4">
+            <label for="message" class="text-base font-bold">Message</label>
+            <textarea type="textarea" id="message" name="message" class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:right-1 focus:ring-primary"></textarea>
+          </div>
+          <div class="w-full px-4">
+            <button type="submit" class="w-full rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg">
+              Send
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Contact Section End -->
 </body>
 
 </html>
