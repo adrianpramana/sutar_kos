@@ -228,8 +228,9 @@ if (isset($_POST["cari"])) {
             <input type="text" email="email" id="email" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
           </div>
           <div class="mb-8 w-full px-4">
-            <label for="message" class="text-base font-bold">Message</label>
-            <textarea type="textarea" id="message" name="message" class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:right-1 focus:ring-primary"></textarea>
+            <label for="message" class="text-base font-bold text-primary">Message</label>
+            <textarea type="textarea" id="message" name="message" class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </textarea>
           </div>
           <div class="w-full px-4">
             <button type="submit" class="w-full rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg">
