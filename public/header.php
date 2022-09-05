@@ -34,13 +34,10 @@
                                     <a href="#home" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">About</a>
                                 </li>
                                 <li class="group">
-                                    <a href="clients.php" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">Clients</a>
-                                </li>
-                                <li class="group">
                                     <a href="#home" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">Contact</a>
                                 </li>
                                 <li class="group">
-                                    <a href="logout.php" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">Logout</a>
+                                    <a href="login.php" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">Login</a>
                                 </li>
                             </ul>
                         </nav>

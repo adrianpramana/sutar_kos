@@ -18,7 +18,7 @@ if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
 
 // Mengecek Session
 if (isset($_SESSION["login"])) {
-    header("Location: index.php");
+    header("Location: clients.php");
     exit;
 }
 
@@ -39,7 +39,7 @@ if (isset($_POST["login"])) {
                 setcookie('key', hash('sha256', $row['username']), time() + 60);
             }
 
-            header("Location: index.php");
+            header("Location: clients.php");
             exit;
         }
     }
@@ -98,7 +98,7 @@ if (isset($_POST["login"])) {
                 <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="remember">Remember</label>
             </div>
             <div class="flex justify-center mr-96">
-                <button type="submit" class="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" name="login">Login</button>
+                <button onclick="loginSuccess()" type="submit" class="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" name="login">Login</button>
             </div>
             <div class="flex justify-center mt-3">
                 <p class="text-sm text-slate-700 font-semibold">If you haven't registered yet, please register first</p>
@@ -111,6 +111,18 @@ if (isset($_POST["login"])) {
             alertDel.forEach((x) => x.addEventListener('click', function() {
                 x.parentElement.classList.add('hidden');
             }));
+        </script>
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            function loginSuccess() {
+                swal({
+                    title: "Login Success!",
+                    icon: "success",
+                    button: "OK",
+                    timer: 3000,
+                });
+            };
         </script>
     </div>
 </body>

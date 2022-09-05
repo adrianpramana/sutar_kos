@@ -36,18 +36,15 @@ if (isset($_POST["cari"])) {
     <title>Clients</title>
     <link rel="stylesheet" href="dist/output.css">
 </head>
-<!-- Header -->
-<?php
-require 'header.php';
-?>
 
 <body>
-
-    <!-- Clients -->
-
-    <div class="container w-1/6 mt-8 pt-36 ">
-        <h1>Daftar Pelanggan</h1>
-        <a href="tambah.php">Tambah Data Pelanggan</a>
+    <?php
+    require 'adminDashboard.php';
+    ?>
+    <section class=" container w-full pt-36 pr-36">
+        <!-- Clients -->
+        <h1 class="font-bold text-3xl flex justify-center">Daftar Pelanggan</h1>
+        <a class="hover:text-sky-400 text-primary" href="tambah.php">Tambah Data Pelanggan</a>
         <form action="" method="POST">
             <input type="text" name="keyword" size="40" autofocus placeholder="masukan keyword pencarian..." autocomplete="off">
             <button type="submit" name="cari">
@@ -70,46 +67,41 @@ require 'header.php';
         <?php if ($halamanAktif < $jumlahHalaman) : ?>
             <a href="?halaman=<?= $halamanAktif + 1; ?>">&raquo;</a>
         <?php endif; ?>
-    </div>
 
+        <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                    <th class="py-3 px-6">No.</th>
+                    <th class="py-3 px-6">Aksi</th>
+                    <th class="py-3 px-6">Gambar</th>
+                    <th class="py-3 px-6">Nama</th>
+                    <th class="py-3 px-6">Email</th>
+                    <th class="py-3 px-6">Jenis Kelamin</th>
+                    <th class="py-3 px-6">KTP</th>
+                    <th class="py-3 px-6">No Handphone</th>
+                <tr>
+            </thead>
 
-    <section class="container">
-        <div>
-            <table class="w-full text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                    <tr>
-                        <th class="py-3 px-6">No.</th>
-                        <th class="py-3 px-6">Aksi</th>
-                        <th class="py-3 px-6">Gambar</th>
-                        <th class="py-3 px-6">Nama</th>
-                        <th class="py-3 px-6">Email</th>
-                        <th class="py-3 px-6">Jenis Kelamin</th>
-                        <th class="py-3 px-6">KTP</th>
-                        <th class="py-3 px-6">No Handphone</th>
-                    <tr>
-                </thead>
+            <?php $i = 1; ?>
+            <?php foreach ($pelanggan as $row) : ?>
+                <tr>
+                    <td><?= $i; ?></td>
+                    <td>
+                        <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
+                        <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin untuk dihapus?');">Hapus</a>
+                    </td>
+                    <td> <img src="img/<?= $row["gambar"]; ?>" width="50">
+                    </td>
+                    <td><?= $row["nama"]; ?></td>
+                    <td><?= $row["email"]; ?></td>
+                    <td><?= $row["jenis_kelamin"]; ?></td>
+                    <td><?= $row["ktp"]; ?></td>
+                    <td><?= $row["no_hp"]; ?></td>
 
-                <?php $i = 1; ?>
-                <?php foreach ($pelanggan as $row) : ?>
-                    <tr>
-                        <td><?= $i; ?></td>
-                        <td>
-                            <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
-                            <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin untuk dihapus?');">Hapus</a>
-                        </td>
-                        <td> <img src="img/<?= $row["gambar"]; ?>" width="50">
-                        </td>
-                        <td><?= $row["nama"]; ?></td>
-                        <td><?= $row["email"]; ?></td>
-                        <td><?= $row["jenis_kelamin"]; ?></td>
-                        <td><?= $row["ktp"]; ?></td>
-                        <td><?= $row["no_hp"]; ?></td>
-
-                    </tr>
-                    <?= $i++ ?>
-                <?php endforeach; ?>
-            </table>
-        </div>
+                </tr>
+                <?= $i++ ?>
+            <?php endforeach; ?>
+        </table>
     </section>
 </body>
 
