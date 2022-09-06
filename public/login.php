@@ -78,53 +78,54 @@ if (isset($_POST["login"])) {
     <?php endif; ?>
 
     <!-- Header -->
-    <div class="pt-36">
-        <h1 class="text-4xl mb-16 font-bold flex justify-center pt-5">Please Login</h1>
-        <form action="" method="POST">
-            <div class="mb-6 flex justify-center">
+    <div class="flex items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-gray-100">
+        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-700 dark:border-gray-800">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">Please Login</h1>
+                <form class="space-y-4 md:space-y-6" action="" method="POST">
+                    <div class="">
+                        <label for="username" class="block mb-2 pt-2 pr-3 text-sm font-medium text-dark">Username</label>
+                        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5" name="username" id="username">
+                    </div>
 
-                <label for="username" class="block mb-2 pt-2 pr-3 text-sm font-medium text-dark">Username</label>
-                <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5" name="username" id="username">
-            </div>
+                    <div class="">
+                        <label for="password" class="block pt-2 pr-3 mb-2 text-sm font-medium text-dark ">Password</label>
+                        <input type="password" name="password" id="password" class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5">
+                    </div>
 
-            <div class="mb-2 flex justify-center">
-                <label for="password" class="block pt-2 pr-3 mb-2 text-sm font-medium text-dark ">Password</label>
-                <input type="password" name="password" id="password" class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input type="checkbox" name="remember" id="remember" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary dark:ring-offset-gray-800">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label class="text-gray-500 dark:text-gray-300" for="remember">Remember</label>
+                            </div>
+                        </div>
+                        <a href="#" class="text-sm font-medium text-primary hover:underline">Forgot Password?</a>
+                    </div>
+                    <button onclick="loginSuccess()" type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm py-2.5 text-center" name="login">Login</button>
             </div>
-
-            <div class="flex justify-center mr-[365px] mb-2">
-                <input type="checkbox" name="remember" id="remember">
-
-                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="remember">Remember</label>
-            </div>
-            <div class="flex justify-center mr-96">
-                <button onclick="loginSuccess()" type="submit" class="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" name="login">Login</button>
-            </div>
-            <div class="flex justify-center mt-3">
-                <p class="text-sm text-slate-700 font-semibold">If you haven't registered yet, please register first</p>
-                <a class="ml-1 text-sm font-semibold text-sky-500" href="registrasi.php">Register Now</a>
-            </div>
-        </form>
-        <script>
-            const closeAlert = document.querySelector('#close-alert');
-            var alertDel = document.querySelectorAll('.alert-del');
-            alertDel.forEach((x) => x.addEventListener('click', function() {
-                x.parentElement.classList.add('hidden');
-            }));
-        </script>
-
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script>
-            function loginSuccess() {
-                swal({
-                    title: "Login Success!",
-                    icon: "success",
-                    button: "OK",
-                    timer: 3000,
-                });
-            };
-        </script>
+            <p class="p-3 text-center  text-sm text-gray-500 font-light">If you haven't registered yet, please register first
+                <a class="font-medium text-primary hover:underline" href="registrasi.php">Register Now</a>
+            </p>
+            </form>
+        </div>
     </div>
+    </div>
+    <script>
+        const closeAlert = document.querySelector('#close-alert');
+        var alertDel = document.querySelectorAll('.alert-del');
+        alertDel.forEach((x) => x.addEventListener('click', function() {
+            x.parentElement.classList.add('hidden');
+        }));
+    </script>
+    <script>
+        function loginSuccess() {
+            alert("Login Success!");
+        }
+    </script>
+
 </body>
 
 </html>

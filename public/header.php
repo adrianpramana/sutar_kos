@@ -31,10 +31,10 @@
                                     <a href="index.php" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">Home</a>
                                 </li>
                                 <li class="group">
-                                    <a href="#home" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">About</a>
+                                    <a href="#about" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">About</a>
                                 </li>
                                 <li class="group">
-                                    <a href="#home" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">Contact</a>
+                                    <a href="#contact" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">Contact</a>
                                 </li>
                                 <li class="group">
                                     <a href="login.php" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">Login</a>
