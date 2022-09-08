@@ -83,12 +83,12 @@ if (isset($_POST["login"])) {
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">Please Login</h1>
                 <form class="space-y-4 md:space-y-6" action="" method="POST">
-                    <div class="">
+                    <div>
                         <label for="username" class="block mb-2 pt-2 pr-3 text-sm font-medium text-dark">Username</label>
                         <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5" name="username" id="username">
                     </div>
 
-                    <div class="">
+                    <div>
                         <label for="password" class="block pt-2 pr-3 mb-2 text-sm font-medium text-dark ">Password</label>
                         <input type="password" name="password" id="password" class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5">
                     </div>

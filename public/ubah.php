@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-    <a href="index.php">Admin</a>
+    <a href="clients.php">Admin Menu</a>
 
     <h1>Ubah Data Pelanggan</h1>
     <form action="" method="POST" enctype="multipart/form-data">

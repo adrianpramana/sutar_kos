@@ -1,22 +1,3 @@
-<?php
-require 'function.php';
-
-// Pagination 
-$jumlahDataPerhalaman = 2;
-$jumlahData = count(query("SELECT * FROM pelanggan"));
-$jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman);
-$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
-$awalData = ($jumlahDataPerhalaman * $halamanAktif) - $jumlahDataPerhalaman;
-
-$pelanggan = query("SELECT * FROM pelanggan LIMIT $awalData, $jumlahDataPerhalaman");
-
-// Ketika tombol cari ditekan
-if (isset($_POST["cari"])) {
-  $pelanggan = cari($_POST["keyword"]);
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 

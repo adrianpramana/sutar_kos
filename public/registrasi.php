@@ -28,25 +28,36 @@ if (isset($_POST["register"])) {
 <body>
 
     <!-- Header -->
-    <h1 class="text-4xl mb-16 font-bold flex justify-center pt-16">Halaman Registrasi</h1>
-    <form action="" method="POST">
-        <div class="mb-6 flex justify-center">
-            <label class="block pt-2 pr-3 mb-2 text-sm font-medium text-dark" for="username">Username</label>
-            <input class="shadow-sm bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5" type="text" name="username" id="username">
+    <div class="flex items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-gray-100">
+        <div class="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 class="text-xl font-bold leading-tight tracking-tighter text-gray-900 md:text-2xl dark:text-white text-center">Registration Form
+                </h1>
+                <form class="space-y-4 md:space-y-6" action="" method="POST">
+                    <div>
+                        <label class="block pt-2 pr-3 mb-2 text-sm font-medium text-dark" for="username">Username</label>
+                        <input class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5" type="text" name="username" id="username">
+                    </div>
+                    <div>
+                        <label class="block pt-2 pr-3 mb-2 text-sm font-medium text-dark" for="password">Password</label>
+                        <input class="shadow-sm bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5" type="password" name="password" id="password">
+                    </div>
+                    <div>
+                        <label class="block pt-2 pr-3 mb-2 text-sm font-medium text-dark" for="password2"> Confirm Password</label>
+                        <input class="shadow-sm bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5" type="password" name="password2" id="password2">
+                    </div>
+                    <button onclick="registrationSuccess()" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm py-2.5 text-center" type="submit" name="register">Register</button>
+            </div>
         </div>
-        <div class="mb-6 flex justify-center">
-            <label class="block pt-2 pr-3 mb-2 text-sm font-medium text-dark" for="password">Password</label>
-            <input class="shadow-sm bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5" type="password" name="password" id="password">
-        </div>
-        <div class="mb-6 flex justify-center">
-            <label class="block pt-2 pr-16 -mx-[52px] mb-2 text-sm font-medium text-dark" for="password2"> Confirm Password</label>
-            <input class="shadow-sm bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5" type="password" name="password2" id="password2">
-        </div>
+        </form>
+    </div>
+    </div>
 
-        <div class="flex justify-center mr-[365px]">
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="submit" name="register">Register</button>
-        </div>
-    </form>
+    <script>
+        function registrationSuccess() {
+            alert("Registration Success!");
+        }
+    </script>
 </body>
 
 </html>

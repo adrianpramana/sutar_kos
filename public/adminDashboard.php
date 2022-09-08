@@ -15,7 +15,7 @@
         <div class="container">
             <div class="relative flex items-center justify-between">
                 <div class="px-4">
-                    <a href="index.php" class="block py-6 text-lg font-bold text-primary">Sutar Kos</a>
+                    <a href="clients.php" class="block py-6 text-lg font-bold text-primary">Sutar Kos</a>
                 </div>
                 <div class="flex items-center px-4">
                     <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">

@@ -12,7 +12,9 @@ require 'function.php';
 if (isset($_POST["submit"])) {
     if (tambah($_POST) > 0) {
         echo "<script>
-        alert('Data berhasil ditambahkan!');</script>
+        alert('Data berhasil ditambahkan!');
+        window.location.replace('clients.php');
+        </script>
         ";
     } else {
         echo "<script>
