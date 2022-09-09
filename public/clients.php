@@ -9,7 +9,7 @@ if (!isset($_SESSION["login"])) {
 require 'function.php';
 
 // Pagination 
-$jumlahDataPerhalaman = 2;
+$jumlahDataPerhalaman = 4;
 $jumlahData = count(query("SELECT * FROM pelanggan"));
 $jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman);
 $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
@@ -62,26 +62,10 @@ if (isset($_POST["cari"])) {
         </div>
         </form>
 
-        <?php if ($halamanAktif > 1) : ?>
-            <a href="?halaman=<?= $halamanAktif - 1; ?>">&laquo;</a>
-        <?php endif; ?>
-
-        <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
-            <?php if ($i == $halamanAktif) :  ?>
-                <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color:red;"><?= $i; ?></a>
-            <?php else : ?>
-                <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-            <?php endif; ?>
-        <?php endfor; ?>
-
-        <?php if ($halamanAktif < $jumlahHalaman) : ?>
-            <a href="?halaman=<?= $halamanAktif + 1; ?>">&raquo;</a>
-        <?php endif; ?>
-
-        <table class="w-full text-sm text-left text-gray-500">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr>
-                    <th class="py-3 px-6">No.</th>
+        <table class="w-full text-sm text-left text-slate-600 my-4">
+            <thead class="text-xs text-slate-600 uppercase bg-gray-50">
+                <tr class="text-center">
+                    <th class="py-3 px-6">No</th>
                     <th class="py-3 px-6">Aksi</th>
                     <th class="py-3 px-6">Gambar</th>
                     <th class="py-3 px-6">Nama</th>
@@ -92,26 +76,45 @@ if (isset($_POST["cari"])) {
                 <tr>
             </thead>
 
-            <?php $i = 1; ?>
-            <?php foreach ($pelanggan as $row) : ?>
-                <tr>
-                    <td><?= $i; ?></td>
-                    <td>
-                        <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
-                        <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin untuk dihapus?');">Hapus</a>
-                    </td>
-                    <td> <img src="img/<?= $row["gambar"]; ?>" width="50">
-                    </td>
-                    <td><?= $row["nama"]; ?></td>
-                    <td><?= $row["email"]; ?></td>
-                    <td><?= $row["jenis_kelamin"]; ?></td>
-                    <td><?= $row["ktp"]; ?></td>
-                    <td><?= $row["no_hp"]; ?></td>
-
-                </tr>
-                <?= $i++ ?>
-            <?php endforeach; ?>
+            <tr>
+                <?php $i = 1; ?>
+                <?php foreach ($pelanggan as $row) : ?>
+            <tr>
+                <td class="text-center"><?= $i; ?></td>
+                <td>
+                    <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
+                    <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin untuk dihapus?');">Hapus</a>
+                </td>
+                <td> <img class="m-auto" src="img/<?= $row["gambar"]; ?>" width="55">
+                </td>
+                <td><?= $row["nama"]; ?></td>
+                <td><?= $row["email"]; ?></td>
+                <td><?= $row["jenis_kelamin"]; ?></td>
+                <td><?= $row["ktp"]; ?></td>
+                <td><?= $row["no_hp"]; ?></td>
+            </tr>
+            <?php $i++; ?>
+        <?php endforeach; ?>
         </table>
+
+        <div class="pt-3 flex justify-end m-2">
+            <?php if ($halamanAktif > 1) : ?>
+                <a href="?halaman=<?= $halamanAktif - 1; ?>">&laquo;</a>
+            <?php endif; ?>
+
+            <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+                <?php if ($i == $halamanAktif) :  ?>
+                    <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color:red;"><?= $i; ?></a>
+                <?php else : ?>
+                    <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+                <?php endif; ?>
+            <?php endfor; ?>
+
+            <?php if ($halamanAktif < $jumlahHalaman) : ?>
+                <a href="?halaman=<?= $halamanAktif + 1; ?>">&raquo;</a>
+            <?php endif; ?>
+
+        </div>
     </section>
 </body>
 

@@ -26,9 +26,13 @@
                     </button>
 
                     <nav id="nav-menu" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none">
-                        <ul class="block lg:flex">
-                            <li class="group">
-                                <a href="logout.php" class="mx-8 flex py-2 text-base text-dark group-hover:text-teal-600">Logout</a>
+                        <ul class="flex">
+                            <li class="group justify-around pr-3 m-3 mr-6">
+                                <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" />
+                                </svg>
+                                <a href="logout.php" class="px-5 text-base text-dark group-hover:text-teal-600">Logout</a>
+
                             </li>
                         </ul>
                     </nav>
