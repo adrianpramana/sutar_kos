@@ -193,11 +193,11 @@
       <form>
         <div class="w-full lg:mx-auto lg:w-2/3">
           <div class="mb-8 w-full px-4">
-            <label for="name" class="text-base font-bold">Name</label>
+            <label for="name" class="text-base font-bold text-primary">Name</label>
             <input type="text" name="name" id="name" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
           </div>
           <div class="mb-8 w-full px-4">
-            <label for="email" class="text-base font-bold">Email</label>
+            <label for="email" class="text-base font-bold text-primary">Email</label>
             <input type="text" email="email" id="email" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
           </div>
           <div class="mb-8 w-full px-4">
