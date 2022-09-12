@@ -242,17 +242,16 @@
           </ul>
         </div>
         <div class="mb-12 w-full px-4 md:w-1/3">
-          <h3 class="mb-5 text-xl font-semibold text-white">Link
-          </h3>
-          <ul>
+          <h3 class="mb-5 text-xl font-semibold text-white">Link</h3>
+          <ul class="text-slate-300">
             <li>
-              <a href="#home" class="mb-3 inline-block text-white hover:text-teal-400">Home</a>
+              <a href="#home" class="mb-3 inline-block text-base hover:text-teal-400">Home</a>
             </li>
             <li>
-              <a href="#clients" class="mb-3 inline-block text-white hover:text-teal-400">Clients</a>
+              <a href="#clients" class="mb-3 inline-block text-base hover:text-teal-400">Clients</a>
             </li>
             <li>
-              <a href="#contact" class="mb-3 inline-block text-white hover:text-teal-400">Contact</a>
+              <a href="#contact" class="mb-3 inline-block text-base hover:text-teal-400">Contact</a>
             </li>
           </ul>
         </div>
@@ -301,7 +300,7 @@
           </a>
         </div>
 
-        <p class="text-center text-xs font-medium text-slate-500">Create with <span class="text-pink-500">❤</span> by <a href="#about" class="font-bold text-teal-400">Sutar Kos</a>, using <a href="https://tailwindcss.com" target="_blank" class="font-bold text-sky-500">Tailwind CSS & PHP Native</a>
+        <p class="text-center text-xs font-medium text-slate-500">Create with <span class="text-pink-500">❤</span> by <a href="#about" class="font-bold text-teal-400">Sutar Kos</a>, using <a href="https://tailwindcss.com" target="_blank" class="font-bold text-sky-500">PHP Native & Tailwind CSS</a>
         </p>
       </div>
     </div>
