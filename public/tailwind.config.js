@@ -8,6 +8,9 @@ module.exports = {
       padding: '16px',
     },
     extend: {
+      spacing: {
+        13: '3.25rem',
+      },
       colors: {
         primary: '#002B5B',
         secondary: '#64748b',

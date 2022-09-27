@@ -102,6 +102,22 @@
             </a>
           </div>
         </div>
+        <div class="container mt-5 px-12 font-inter max-w-md mx-auto sm:max-w-xl md:max-w-5xl lg:flex lg:max-w-full lg:p-0">
+          <div class="p-12 lg:flex-1">
+            <h3 class="text-4xl font-bold text-slate-800 sm:text-5xl md:text-6xl">Sutar <span class="text-sky-500">Kos</span></h3>
+            <hr class="border border-t-4 border-slate-900">
+            <img src="img/2.jpg" alt="Laptop" class="mt-4 rounded-xl shadow-xl sm:mt-6 sm:h-64 sm:w-full sm:object-cover sm:object-center lg:hidden" />
+            <h2 class="mt-6 text-2xl font-semibold text-slate-800 sm:mt-8 sm:text-4xl">Best Offering</h2>
+            <p class="mt-2 text-slate-600 sm:mt-4 sm:text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
+              assumenda hic vitae qui consequatur ipsam, nihil culpa repudiandae.</p>
+            <div class="mt-4 sm:mt-6">
+              <a href="#" class="inline-block px-5 py-3 bg-red-600 text-white rounded-lg shadow-lg uppercase font-semibold tracking-wider text-sm sm:text-base hover:bg-red-400">Book Now</a>
+            </div>
+          </div>
+          <div class="hidden lg:flex lg:w-1/2">
+            <img src="img/facility/lr_about.jpg" alt="Laptop" class="object-cover rounded-r-full" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -142,7 +158,28 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum minus eum laboriosam harum architecto esse?
           </p>
         </div>
-
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="shadow-md rounded-md overflow-hidden">
+            <img src="img/facility/living_room.jpg" alt="Room 2" width="w-full">
+          </div>
+          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark">
+            Living Room
+          </h3>
+          <p class="text-base font-medium text-secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum minus eum laboriosam harum architecto esse?
+          </p>
+        </div>
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="shadow-md rounded-md overflow-hidden">
+            <img src="img/facility/living_room.jpg" alt="Room 2" width="w-full">
+          </div>
+          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark">
+            Living Room
+          </h3>
+          <p class="text-base font-medium text-secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum minus eum laboriosam harum architecto esse?
+          </p>
+        </div>
       </div>
     </div>
 
